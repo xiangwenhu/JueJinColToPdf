@@ -1,0 +1,689 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专栏</title>
+    <style>
+        pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.codehilite .hll { background-color: #ffffcc }
+.codehilite { background: #f8f8f8; }
+.codehilite .c { color: #408080; font-style: italic } /* Comment */
+.codehilite .err { border: 1px solid #FF0000 } /* Error */
+.codehilite .k { color: #008000; font-weight: bold } /* Keyword */
+.codehilite .o { color: #666666 } /* Operator */
+.codehilite .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.codehilite .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.codehilite .cp { color: #BC7A00 } /* Comment.Preproc */
+.codehilite .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.codehilite .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.codehilite .cs { color: #408080; font-style: italic } /* Comment.Special */
+.codehilite .gd { color: #A00000 } /* Generic.Deleted */
+.codehilite .ge { font-style: italic } /* Generic.Emph */
+.codehilite .gr { color: #FF0000 } /* Generic.Error */
+.codehilite .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.codehilite .gi { color: #00A000 } /* Generic.Inserted */
+.codehilite .go { color: #888888 } /* Generic.Output */
+.codehilite .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.codehilite .gs { font-weight: bold } /* Generic.Strong */
+.codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.codehilite .gt { color: #0044DD } /* Generic.Traceback */
+.codehilite .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.codehilite .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.codehilite .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.codehilite .kp { color: #008000 } /* Keyword.Pseudo */
+.codehilite .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.codehilite .kt { color: #B00040 } /* Keyword.Type */
+.codehilite .m { color: #666666 } /* Literal.Number */
+.codehilite .s { color: #BA2121 } /* Literal.String */
+.codehilite .na { color: #7D9029 } /* Name.Attribute */
+.codehilite .nb { color: #008000 } /* Name.Builtin */
+.codehilite .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.codehilite .no { color: #880000 } /* Name.Constant */
+.codehilite .nd { color: #AA22FF } /* Name.Decorator */
+.codehilite .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.codehilite .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.codehilite .nf { color: #0000FF } /* Name.Function */
+.codehilite .nl { color: #A0A000 } /* Name.Label */
+.codehilite .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.codehilite .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.codehilite .nv { color: #19177C } /* Name.Variable */
+.codehilite .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.codehilite .w { color: #bbbbbb } /* Text.Whitespace */
+.codehilite .mb { color: #666666 } /* Literal.Number.Bin */
+.codehilite .mf { color: #666666 } /* Literal.Number.Float */
+.codehilite .mh { color: #666666 } /* Literal.Number.Hex */
+.codehilite .mi { color: #666666 } /* Literal.Number.Integer */
+.codehilite .mo { color: #666666 } /* Literal.Number.Oct */
+.codehilite .sa { color: #BA2121 } /* Literal.String.Affix */
+.codehilite .sb { color: #BA2121 } /* Literal.String.Backtick */
+.codehilite .sc { color: #BA2121 } /* Literal.String.Char */
+.codehilite .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.codehilite .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.codehilite .s2 { color: #BA2121 } /* Literal.String.Double */
+.codehilite .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.codehilite .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.codehilite .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.codehilite .sx { color: #008000 } /* Literal.String.Other */
+.codehilite .sr { color: #BB6688 } /* Literal.String.Regex */
+.codehilite .s1 { color: #BA2121 } /* Literal.String.Single */
+.codehilite .ss { color: #19177C } /* Literal.String.Symbol */
+.codehilite .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.codehilite .fm { color: #0000FF } /* Name.Function.Magic */
+.codehilite .vc { color: #19177C } /* Name.Variable.Class */
+.codehilite .vg { color: #19177C } /* Name.Variable.Global */
+.codehilite .vi { color: #19177C } /* Name.Variable.Instance */
+.codehilite .vm { color: #19177C } /* Name.Variable.Magic */
+.codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+* {
+    font-size: 30px;
+}
+
+img{
+    display: block;
+    min-width: 50%;
+}  
+    </style>
+</head>
+<body>
+<h1>我的掘金前端周刊 第五周 7月19日-7月25日</h1><p>前言</p>
+<p>收集一周之内，优秀的前端文章，以便自己和有类似需求的同志，能更高效的学习和成长。如有遗漏，敬请谅解</p>
+<p>本文下面的题材默认不会收集：  <strong>1. 面试</strong> <strong>2. 算法</strong>  </p>
+<p>往期可查看专栏 <a href="https://juejin.cn/column/6977915766267969549">我的掘金前端周栏</a>, 欢迎关注，更期望你的点赞。 </p>
+<p><strong>往期推荐</strong> <br />
+<a href="https://juejin.cn/post/6986433541319950373">我的掘金前端周刊 第四周 7月12日-7月18日</a> <br />
+<a href="https://juejin.cn/post/6983841126272729124">我的掘金前端周刊 第三周 7月5日-7月11日</a> <br />
+<a href="https://juejin.cn/post/6981232872401141796">我的掘金前端周刊 第二周 6月28日-7月4日</a> <br />
+<a href="https://juejin.cn/post/6977935744505479175">我的掘金前端周刊 第一周</a>  </p>
+<h2 id="_1">本周趣事</h2>
+<ol>
+<li>先是钉钉团队发了一篇爆款<a href="https://juejin.cn/post/6986436944913924103">专有钉钉前端面试指南</a>，然后相继出现<a href="https://juejin.cn/post/6987070062490288165">手撕钉钉前端考试卷，offer，拿来吧你~</a>，<a href="https://juejin.cn/post/6987549240436195364">脚撕专有钉钉前端面试题（标题，拿来吧）</a>，这三篇发题者和脚撕是同一作者，甚是有看点。</li>
+<li><a href="https://juejin.cn/post/6986237263164211207">后端一次给你10万条数据,如何优雅展示，面试官到底考察我什么?</a>，<strong>4.7</strong>万访问量，100+的点赞，内容的<strong>营养等级却是负数</strong>，有些意思。</li>
+</ol>
+<h2 id="_2">五星推荐</h2>
+<h3 id="_3"><a href="https://juejin.cn/post/6986453616517185567">产品经理：能不能让这串数字滚动起来？</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2893570337421646">手撕红黑树</a></li>
+<li>赞： 1100+  </li>
+<li>推荐指数： ★ ★ ★ ★ ★ </li>
+<li>推荐理由： 先看效果，再说原理，然后一步一步教的让数字如何动起来，还有回弹效果哦。 非常实用，所以，直接用吧。</li>
+</ul>
+<h2 id="_4">四星推荐</h2>
+<h3 id="10canvas3"><a href="https://juejin.cn/post/6986785259966857247">为了让她10分钟入门canvas，我熬夜写了3个小项目和这篇文章</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/1292681407377624">Sunshine_Lin</a></li>
+<li>赞： 600+  </li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由：以画时钟，刮刮卡，画板三个项目，手把手教你学习Canvas。</li>
+</ul>
+<h3 id="8css-4"><a href="https://juejin.cn/post/6986873449721364510">8则未必知道且超级实用的纯CSS布局排版技巧 | 网易4年实践</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2330620350432110">JowayYoung</a></li>
+<li>赞： 400+  </li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由：主体布局，两列布局，三列布局，圣杯布局/双飞翼布局，均分布局，居中布局，自适布局，吸附布局，横向布局，凸显布局，间距布局，空载布局，多格布局等，你要用哪种呢，较科学级别。</li>
+</ul>
+<p>作者另外一篇 <a href="https://juejin.cn/post/6981673766178783262">写给中高级前端关于性能优化的9大策略和6大指标 | 网易四年实践</a> 也强烈推荐。</p>
+<h3 id="_5"><a href="https://juejin.cn/post/6987681953424080926">一篇讲透自研的前端错误监控</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2365804752407480">羽飞</a></li>
+<li>赞： 300+  </li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由：第三方前端监控系统太贵？ 那我们自己实现一个吧。涉及前端监控错误收集，上报，可视化，以及遇到的一些问题。</li>
+</ul>
+<h2 id="_6">三星推荐</h2>
+<h3 id="_7"><a href="https://juejin.cn/post/6987166546502090788">【干货】私藏的这些高级工具函数，你拥有几个?</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/131597122679661">云的世界</a></li>
+<li>赞：400+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：用极其精简的代码，编写的高级工具函数，覆盖localStorage已使用空间，桌面通知，视频截图，base64编码和解码，UUID生成，序列生成器等等，总有一个留的住你。</li>
+</ul>
+<h3 id="packagejsonpackage"><a href="https://juejin.cn/post/6987179395714646024">你真的了解package.json吗？来看看吧，这可能是最全的package解析</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/3359754028319240">隐冬</a></li>
+<li>赞： 300+</li>
+<li>推荐指数： ★ ★ ★</li>
+<li>推荐理由：详细的罗列了package.json每个字段的用途，关键是中文的。</li>
+</ul>
+<h3 id="_8"><a href="https://juejin.cn/post/6986378966726606885">每个前端都可以成为站长，零成本搭建一个壁纸下载站</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2955079655898093">大帅老猿</a></li>
+<li>赞： 100+</li>
+<li>推荐指数： ★ ★ ★</li>
+<li>推荐理由：免费壁纸下载，二次元福利。图文并茂，就是那么简单。</li>
+</ul>
+<h3 id="_9"><a href="https://juejin.cn/post/6987140782595506189">如何搭建适合自己团队的构建部署平台</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/3456520257288974">政采云前端团队</a></li>
+<li>赞： 100+</li>
+<li>推荐指数： ★ ★ ★</li>
+<li>推荐理由：指出了现有构建部署方案存在的痛点，并从0到1自己实现了一套系统，并支持多实例。</li>
+</ul>
+<h3 id="_10"><a href="https://juejin.cn/post/6986834120290598942">微前端落地，悬着的心终于放下了</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2981531265821416">杰出D</a></li>
+<li>赞：100+</li>
+<li>推荐指数： ★ ★ ★</li>
+<li>推荐理由：如今微前端这么火，肯定很多同事已经尝试或者跃跃欲试。这篇文章的 <strong>入微前端要解决的问题</strong>，<strong>解决实际遇到的一些问题</strong> 章节相比会让你收获颇多。</li>
+</ul>
+<h3 id="_11"><a href="https://juejin.cn/post/6987910809657540644">我与前端有场约会🌟 ｜ 工作一周年经验总结</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/703340610597064">寒草</a></li>
+<li>赞： 100+</li>
+<li>推荐指数：★ ★ ★</li>
+<li>推荐理由：前端一年新人的自己总结，思路清晰，目标明确，信念坚定。 1-3年的前端同志们，可以参考参考，应该会有所收获。</li>
+</ul>
+<h3 id="vscode"><a href="https://juejin.cn/post/6987420993568374797">vscode 是怎么跑起来的</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2788017216685118">zxg_神说要有光</a></li>
+<li>赞： 100+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：你不会不知道VSCode是以及electron编写的吧，你不会不知道有主进程和渲染进程吧，你不会不知道VSCode是怎么跑起来的吧。 作为天天吃饭的工具，值得了解一波。</li>
+</ul>
+<h3 id="_12"><a href="https://juejin.cn/post/6986921261297303565">封装组件的技巧和坑</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/1662117313775806">前端自学驿站</a></li>
+<li>赞： 100+</li>
+<li>推荐指数： ★ ★ ★</li>
+<li>推荐理由：Vue表单组件封装，涉及深度属性，slots，表单效验，事件监听等知识点。大哥，你好待把标题细化一下，我一个React选手进来，就尴尬了。</li>
+</ul>
+<h3 id="vue-router"><a href="https://juejin.cn/post/6988316779818778631">从使用到自己实现简单Vue Router看这个就行了</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/4098610193243789">小浪努力学前端</a></li>
+<li>赞： 100+</li>
+<li>指数： ★ ★ ★</li>
+<li>推荐理由：详细的罗列Vue Router的各种用法，并一步一步的实现了一个简版Vue Router。 文章比较长，知识点还是蛮多了。</li>
+</ul>
+<h3 id="cssjavascript-part2"><a href="https://juejin.cn/post/6986967746453962782"> 能用CSS实现的就不用麻烦JavaScript — Part2</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/4125023357377447">lizhenwen</a></li>
+<li>赞： 50+</li>
+<li>推荐指数：★ ★ ★</li>
+<li>推荐理由：这个理念很正确啊。覆盖拾色器，轮播图，手风琴，放大镜，打字效果， 截断文本， 自定义 <code>input</code> 焦点光标的颜色， 埋点统计， 火焰效果等，先学到，部分还是很实用的。</li>
+</ul>
+<p>当然有二必有其一，<a href="https://juejin.cn/post/6986084648778465288">能用CSS实现的就不用麻烦JavaScript</a>也不错。</p>
+<h3 id="meta"><a href="https://juejin.cn/post/6987919006468407309">meta标签到底是做什么的|我竟一无所知</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/3359754028319240">隐冬</a></li>
+<li>赞： 100+</li>
+<li>推荐指数：★ ★ ★</li>
+<li>推荐理由：meta可以刷新页面，可以控制缓存，可以定义基础地址，可以提升SEO竞争力等等，确实要多了解了解。</li>
+</ul>
+<h3 id="node"><a href="https://juejin.cn/post/6988274491025522696">【前端福利】node实现微信机器人 最新可用|个人微信收款|支持所有微信号</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2963939080543335">一只不守妇道的花喵</a></li>
+<li>赞： 100+</li>
+<li>推荐指数：★ ★ ★</li>
+<li>推荐理由：这严格意义上是更偏后端的文章，不过和钱相关。还是值得你秀一波。</li>
+</ul>
+<h3 id="css"><a href="https://juejin.cn/post/6987043290444988424"> CSS 动画实现星球环绕效果</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/15389720083324405">阿里巴巴TXD</a></li>
+<li>赞： 50+</li>
+<li>推荐指数：★ ★ ★</li>
+<li>推荐理由： 涉及不少数学知识，一起写个效果，并复习复习数学吧。 有详细的步骤。</li>
+</ul>
+<h3 id="url15"><a href="https://juejin.cn/post/6986416221323264030">「自我检验」输入URL发生了啥？希望你顺便懂这15个知识点</a></h3>
+<ul>
+<li>作者：  <a href="https://juejin.cn/user/1292681407377624">Sunshine_Lin</a></li>
+<li>赞： 50+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：浏览器渲染，加载阻塞，重绘回流等等，巩固一波。</li>
+</ul><h1>我的掘金前端周刊 第四周 7月12日-7月18日</h1><h2 id="_1">前言</h2>
+<p>掘金是一个优秀的社区，每天都会产出非常多的优秀文章。
+首页推荐的内容涉及太多领域， 收集一周之内，优秀的前端文章，以便自己和有类似需求的同志，能更高效的学习和成长。</p>
+<p>如有遗漏，敬请谅解</p>
+<p>本文下面的题材默认不会收集：<br />
+<strong>1. 面试</strong> <br />
+<strong>2. 算法</strong>  </p>
+<p>往期可查看专栏 <a href="https://juejin.cn/column/6977915766267969549">我的掘金前端周栏</a>, 欢迎关注，更期望你的点赞。 </p>
+<p><strong>往期推荐</strong> <br />
+<a href="https://juejin.cn/post/6983841126272729124">我的掘金前端周刊 第三周 7月5日-7月11日</a> <br />
+<a href="https://juejin.cn/post/6981232872401141796">我的掘金前端周刊 第二周 6月28日-7月4日</a> <br />
+<a href="https://juejin.cn/post/6977935744505479175">我的掘金前端周刊 第一周</a>   </p>
+<h2 id="_2">五星推荐</h2>
+<h3 id="_3"><a href="https://juejin.cn/post/6983854006124675108">每个前端都值得拥有自己的组件库，就像每个夏天都拥有西瓜🍉</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/325111174662855">洛竹</a></li>
+<li>赞： 1300+  </li>
+<li>推荐指数： ★ ★ ★ ★ ★ </li>
+<li>推荐理由：每个前端都值得拥有自己的组件库， 怎么去拥有呢？ 文章给了很详细的解答，多包管理，代码规范化，文档，测试，发布等等。</li>
+</ul>
+<h2 id="_4">四星推荐</h2>
+<h3 id="js"><a href="https://juejin.cn/post/6984188410659340324">「硬核JS」你的程序中可能存在内存泄漏</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2999123452373735">isboyjc</a></li>
+<li>赞： 400+  </li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由： 我想大家肯定有多少知道JS的内存泄漏，但是写的清楚明白的不多得，这篇不错哦。 主要内容覆盖常见的内容泄漏，定位排查修复。</li>
+</ul>
+<h3 id="_5"><a href="https://juejin.cn/post/6984587700951056414">拖拽竟然还能这样玩！</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/7649158221030794">阿宝哥</a></li>
+<li>赞： 600+  </li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由： 拖拽可以定制，文本，JSON, html， 哇， 秀出新天地。让我们更深入的了解 DataTransfer API。</li>
+</ul>
+<h3 id="dan-abramov"><a href="https://juejin.cn/post/6984291978884153358">Dan Abramov 访谈实录</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/team/6930945479362478092">ByteDance Web Infra</a></li>
+<li>赞： 50+  </li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由： 译文。React.js 核心开发者Dan Abramov对前端的一些看法和理解，文中包含了大量的专业概念与启发性思想。 也有React与vue的对比哦。 </li>
+</ul>
+<h2 id="_6">三星推荐</h2>
+<h3 id="react"><a href="https://juejin.cn/post/6983853725987110919">从零带你架构一个企业级 React 项目</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/712139233840407">yck</a></li>
+<li>赞： 200+  </li>
+<li>推荐指数： ★ ★ ★  </li>
+<li>推荐理由：从不同维度对 Hooks（非Hooks）,CSS 方案，状态方案，路由方案进行了比较，并给出建议方案。另外工程化配置，单测等也有提到。所以，你还在做选择的时候，这篇文章就是甘甜的水。</li>
+</ul>
+<h3 id="webstorage"><a href="https://juejin.cn/post/6984908770149138446">【收藏就会】浏览器WebStorage缓存使用指南</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/4248168660735310">wangly19</a></li>
+<li>赞： 300+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：对localStorage和sessionStorage的封装，增删改查。并支持过期和清理，可以拿来主义。</li>
+</ul>
+<h3 id="threejs3d"><a href="https://juejin.cn/post/6985033373857579045">用Three.js打造酷炫3D个人网站（含源码）</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/782508009993229">Alaso</a></li>
+<li>赞： 200+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：译文。简历是展示能力的地方，来个3D的简历，it's your show time. 介绍了three.js的机工作制，ammo.js物理引擎，运动交互以及处理用户输入。</li>
+</ul>
+<h3 id="petite-vue"><a href="https://juejin.cn/post/6983328034443132935">尤大大新活 petite-vue 尝鲜</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/1239904849499911">8号的凌晨4点</a></li>
+<li>赞： 100 +  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：5.8kb的petite-vue，介绍了基本的使用和不支持的特性，追求轻巧的同学可以关注一波。react也早早有对标的3kb的preact。</li>
+</ul>
+<h3 id="10vue3"><a href="https://juejin.cn/post/6983867993805553671">10张脑图带你快速入门Vue3 | 附高清原图</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/3957856403462989">LBJ</a></li>
+<li>赞： 100 +  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：十张图：应用实例和组件实例，模板语法，配置选项，计算属性和监听器，绑定class和style，条件渲染，列表渲染，事件处理，v-model及其修饰符，组件的基本使用。 作为参考手册，复习知识点妥妥的。</li>
+</ul>
+<h3 id="_7"><a href="https://juejin.cn/post/6983832852118896671">掘金的镇站之宝们：掘金八大分类百强文章可视化分析</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/703340610597064">寒草</a></li>
+<li>赞： 100+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：如题掘金八大分类百强文章可视化分析。 覆盖 前端，后端，Android，ios，人工智能，开发工具，代码人生，阅读。  掘金社区吗，最火的大家知道吗？ 当然是<strong>前端</strong>。 其次呢？ 后端。</li>
+</ul>
+<h3 id="es7es8es9"><a href="https://juejin.cn/post/6983625803271503886">一篇文章消化 ES7、ES8、ES9 主要新特性</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2524134427070071">itsSam</a></li>
+<li>赞： 100+  </li>
+<li>推荐指数： ★ ★ ★</li>
+<li>推荐理由：本文的亮点嘛，让其清晰的知道了，哪些是ES7, ES8, ES9的知识。</li>
+</ul>
+<h3 id="_8"><a href="https://juejin.cn/post/6984971905069482021">前端网页字体优化指南</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2101921962557885">Momo</a></li>
+<li>赞： 100+  </li>
+<li>推荐指数： ★ ★ ★ ★ ★ </li>
+<li>推荐理由： 这个可能比较冷门，也着实是前端优化的一种手段。 主要手段：转换字体格式，按需压缩字体，统一渲染时机。说道这里，忍不住说一句， <strong>压缩</strong>，前端优化，永远的神。</li>
+</ul>
+<h3 id="_9"><a href="https://juejin.cn/post/6984990913118339085">工作中可能会使用到的数据结构和算法</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/team/6954914058332176397">字节教育</a></li>
+<li>赞： 100+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：介绍了栈，队列，链表，树，图等的实现和一些应用场景。</li>
+</ul>
+<h3 id="reactdvaumi012"><a href="https://juejin.cn/post/6983855069850501127">带你入门react+dva+umi——从0到1保姆级教学(2)</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/4476867080882663">BXG</a></li>
+<li>赞： 100+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：react + dva + umi开发教学，特点是详细。</li>
+</ul>
+<h3 id="css"><a href="https://juejin.cn/post/6983855069850501127">CSS 奇思妙想 | 巧妙的实现带圆角的三角形</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2330620350437678">chokcoco</a></li>
+<li>赞： 50+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：纯CSS实现带圆角的三角形方案。SVG,拼接，重叠渐变等方案，思路惊奇。</li>
+</ul>
+<h3 id="typescript"><a href="https://juejin.cn/post/6985296521495314445">TypeScript 高级类型及用法</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/post/6985296521495314445">暖生</a></li>
+<li>赞： 50+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：TypeScript 高级类型的使用场景。所以对于已能基本使用TS, 追求更进一步的提升的朋友，走过路过，值得你停留看看。</li>
+</ul>
+<h3 id="2021"><a href="https://juejin.cn/post/6984577520607690765">回顾，安慰自己的灵魂; 反思，向心前行｜ 2021年中总结</a></h3>
+<ul>
+<li>作者：<a href="https://juejin.cn/user/131597122679661">云的世界</a></li>
+<li>赞： 100+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由： 忧伤而坚定的总结，源于真实，值得思考。<blockquote>
+<p>明天会怎样呢？ 灵魂和身体，总有一个在路上。</p>
+</blockquote>
+</li>
+</ul><h1>我的掘金前端周刊 第三周 7月5日-7月11日</h1><h2 id="_1">前言</h2>
+<p>掘金是一个优秀的社区，每天都会产出非常多的优秀文章。
+首页推荐的内容涉及太多领域， 收集一周之内，优秀的前端文章，以便自己和有类似需求的同志，能更高效的学习和成长。</p>
+<p>如有遗漏，敬请谅解</p>
+<p>本文下面的题材默认不会收集：
+1. 面试
+2. 算法刷题</p>
+<p>往期可查看专栏 <a href="https://juejin.cn/column/6977915766267969549">我的掘金前端周栏</a>, 欢迎关注，更期望你的点赞。 </p>
+<h2 id="_2">五星推荐</h2>
+<h3 id="96"><a href="https://juejin.cn/post/6981673766178783262">写给中高级前端关于性能优化的9大策略和6大指标 | 网易四年实践</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/post/6981673766178783262">JowayYoung</a></li>
+<li>赞： 1400+  </li>
+<li>推荐指数： ★ ★ ★ ★ ★ </li>
+<li>推荐理由：九大策略， 六大指标，以实践为依据，不一样的精彩总结。</li>
+</ul>
+<h2 id="_3">四星推荐</h2>
+<h3 id="js"><a href="https://juejin.cn/post/6981588276356317214">硬核JS」你真的了解垃圾回收机制吗</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2999123452373735">isboyjc</a></li>
+<li>赞： 400+  </li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由：新生代，老生代，标记清除，三色标记法，必须得了解。</li>
+</ul>
+<p>这里强烈推荐 李兵老师的 <strong><a href="https://time.geekbang.org/column/intro/100048001">图解 Google V8</a></strong></p>
+<p>相关推荐: <br />
+<a href="https://juejin.cn/post/6967184141833994248">现在已经卷到需要问三色标记了吗</a> <br />
+<a href="https://juejin.cn/post/6844903833387155464">JavaScript中的垃圾回收和内存泄漏</a> <br />
+<a href="https://juejin.cn/post/6844903556265279502">简单了解JavaScript垃圾回收机制</a> <br />
+<a href="https://juejin.cn/post/6909239354418266119">V8 引擎垃圾回收与内存分配</a> <br />
+<a href="https://juejin.cn/post/6844904036932534279">图解 JavaScript 垃圾回收 — 现代 JavaScript 教程</a>   </p>
+<h3 id="webpack"><a href="https://juejin.cn/post/6982361231071903781">webpack 最佳实践</a>)</h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/team/6932676282429898766">微医前端团队</a></li>
+<li>赞： 400+  </li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由：从基础配置到功能完善，再到优化。 值得你刷一波。</li>
+</ul>
+<h3 id="24wthreejsweb3d"><a href="https://juejin.cn/post/6981249521258856456">2天赚了4个W，手把手教你用Threejs搭建一个Web3D汽车展厅！</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2955079655898093">大帅老猿</a></li>
+<li>赞： 800+  </li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由：幽默，风趣，深入浅出的threejs搭建3D汽车展厅。实力与Money齐飞。</li>
+</ul>
+<h3 id="threejs013d"><a href="https://juejin.cn/post/6980983551399788580">带你入门three.js——从0到1实现一个3d可视化地图</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2805609406402798">Fly</a></li>
+<li>赞： 200+  </li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由：从0到1，跟你学three.js。 </li>
+</ul>
+<h3 id="codingliao-javascript"><a href="https://juejin.cn/post/6981983593350463519">学会这些鲜有人知的coding技巧，从此早早下班liao-JavaScript实战技巧篇</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/166781499739358">凉城a</a></li>
+<li>赞： 500+  </li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由：日常的coding技巧，前部分很精彩，后部分作为手册，也是不错的选择。 用心总结，放心学就好。</li>
+</ul>
+<h2 id="_4">三星推荐</h2>
+<h3 id="23-2021"><a href="https://juejin.cn/post/6980985511858929694">一位 23 岁深漂女前端的心路历程｜2021 年中总结</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/1521379823063437">卡喵妹</a></li>
+<li>赞： 300+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由： 18岁，22岁，24岁 ..... 30岁。岁月无情的变迁，回首，是喜是忧。 一起看看23岁妹子的昨天，今天，明天。 叙事很好，目标明确。 当然掘金社区，妹子珍贵。</li>
+</ul>
+<h3 id="qiankun290"><a href="https://juejin.cn/post/6981601061840617503">关于微前端(阿里QianKun)的那点事——上线一个“微前端”逼走了2位90后</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/1143121350758973">webmote33</a></li>
+<li>赞： 300+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由： <strong>救火还需队长</strong> 章节，推荐细读和细品。</li>
+</ul>
+<h3 id="-cli"><a href="https://juejin.cn/post/6982215543017193502">前端工程化实战 - 企业级 CLI 开发</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2717648473821736">CookieBoty</a></li>
+<li>赞： 400+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：企业级有点拖大，其CLI思路值得学习和思考。</li>
+</ul>
+<h3 id="13vue"><a href="https://juejin.cn/post/6981628129089421326">「百毒不侵」面试官最喜欢问的13种Vue修饰符</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/1292681407377624">Sunshine_Lin</a></li>
+<li>赞： 200+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：vue修饰符一网打净，<code>lazy,trim,number,stop,capture,self,once,prevent,native,left，right，middle,passive,camel,sync,keyCode</code>, 还差什么，等你来补充。</li>
+</ul>
+<h3 id="vue"><a href="https://juejin.cn/post/6981031288803164173">Vue后台管理系统怎么做权限验证和动态路由，谁来做？</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/3825956197763976">大田稻谷</a></li>
+<li>赞： 100+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：探索了权限管理的实现思路。</li>
+<li>个人视角：其实不管是基于 ACL, RBAC等等，权限前后端都的做，一个简单的理由，前端的东西都是不可靠的。</li>
+</ul>
+<h3 id="_5"><a href="https://juejin.cn/post/6981257575425654792">从零设计可视化大屏搭建引擎</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/3808363978429613">徐小夕</a></li>
+<li>赞： 100+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：阐述了大屏可视化的核心功能的实现方法， 拖拽器，物料中心，动态渲染，配置面板，控制中心等等。 期待更多的实现细节。</li>
+</ul>
+<h3 id="typescript"><a href="https://juejin.cn/post/6981728323051192357">一篇够用的TypeScript总结</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/3386151545609837">俊劫</a></li>
+<li>赞： 200+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：覆盖TS的基本语法，高级语法，配置，以及许多工具类型，比如<code>Partial,Parameters,InstanceType</code>等等。 是入门TS的好文章。</li>
+</ul>
+<h3 id="_6"><a href="https://juejin.cn/post/6981638032768106526">从场景倒推我们要什么样的微前端体系</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/4098589725834317">字节前端</a></li>
+<li>赞： 200+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由： 出发点比较新颖，阐述了微前端的核心概念，以及最重要的沙箱隔离。</li>
+</ul>
+<h3 id="_7"><a href="https://juejin.cn/post/6981970196072235044">让你的动画「时间倒流」</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/3931509310625214">起小就些熊</a></li>
+<li>赞： 50+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由： 一步一步的实现缓动画， 思路清晰。 更深一步，推荐阅读<a href="https://www.npmjs.com/package/animejs">animejs</a>。</li>
+</ul>
+<h3 id="_8"><a href="https://juejin.cn/post/6981978319143043108">你不得不知的大厂问题复盘方法论</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/team/6932676282429898766">微医前端团队</a></li>
+<li>赞： 50+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：阐述了复盘的重要性，以及复盘的方法论。</li>
+<li>个人视角：复盘属于PDCA的哪一个环节？</li>
+</ul>
+<h3 id="settimeoutnext"><a href="https://juejin.cn/post/6981743275082252295">依赖反转 + 迭代器思想，实现setTimeout面向next编程</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/131597122679661">云的世界</a></li>
+<li>赞： 50+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：迭代器思想实现setTimeout面向next编程，其实不仅仅是setTimeout，你可以完全定制自己的执行计划。 其思想值得思考和借鉴。</li>
+</ul><h1>我的掘金前端周刊 第二周 6月28日-7月4日</h1><h2 id="_1">前言</h2>
+<p>掘金是一个优秀的社区，每天都会产出非常多的优秀文章。
+首页推荐的内容涉及太多领域， 收集一周之内，优秀的前端文章，以便自己和有类似需求的同志，能更高效的学习和成长。</p>
+<p>如有遗漏，敬请谅解</p>
+<p>本文下面的题材默认不会收集：
+1. 面试
+2. 算法刷题</p>
+<h2 id="8"><a href="https://juejin.cn/post/6980142557066067982">文件上传，搞懂这8种场景就够了</a></h2>
+<ul>
+<li>作者：   <a href="https://juejin.cn/user/764915822103079">阿宝哥</a></li>
+<li>赞： 800+  </li>
+<li>推荐指数： ★ ★ ★ ★ ★ </li>
+<li>推荐理由：8种上传，单文件，多文件，文件目录，压缩文件目录，拖拽，剪贴板，大文件分块，服务端上传。覆盖广，并有代码示例，文件上传之SDK。</li>
+</ul>
+<h2 id="2021"><a href="https://juejin.cn/post/6979821352576352269">宁不会真以为咱前端仔只会切图吧？！喏，给你 2021 最酷网页设计指南！</a></h2>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/1521379823340792">掘金安东尼</a></li>
+<li>赞：800+</li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由： 虽说是一篇译文，其新拟态，磨砂玻璃设计，3D 色彩，微动画，不对称布局等确实赏心悦目。</li>
+</ul>
+<h2 id="css3-60-fps-codereview"><a href="https://juejin.cn/post/6980220327951335432">疯狂操作 CSS3 实现 60 FPS 动画效果，CodeReview 时同事直呼：细节！</a></h2>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/1521379823340792">掘金安东尼</a></li>
+<li>赞： 300+</li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由： 采用css提升动画性能。循序渐进，生动有趣。 分贫民版，小V版，大V版，终极版。 与<a href="https://juejin.cn/post/6976810016930005029">我优化了进度条，页面性能竟提高了70%</a> 思想上有很多相同之处。 css3动画，基本都是通过<code>will-change</code>, <code>transform</code> <code>opacity</code>这些手段来手续。 更多采用css优化性能可以查看文章<a href="https://juejin.cn/post/6942661408181977118">仅使用CSS提高页面渲染速度</a></li>
+</ul>
+<h2 id="2021-css"><a href="https://juejin.cn/post/6978647140910727176">2021年你可能不知道的 CSS 特性（下篇）</a></h2>
+<ul>
+<li>作者: <a href="https://juejin.cn/team/6930489296331735055">淘系前端团队</a></li>
+<li>赞：600+</li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由：介绍了CSS一些新特性，CSS 等比缩放，css原生支持嵌套，CSS Houdini 变量等等。 新特性，先了解一波。</li>
+</ul>
+<h2 id="css"><a href="https://juejin.cn/post/6978469579508940831">不为人知的 CSS 技巧</a></h2>
+<ul>
+<li>作者: <a href="https://juejin.cn/user/958429872534056">gyx_这个杀手不太冷静</a></li>
+<li>赞：100+</li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由：纯css实现打字效果，平滑滚动，吸顶，优化滚动体验，动态文字提示等等。 不乏一些实用的技巧，值得节俭和学习。</li>
+</ul>
+<h2 id="_2"><a href="https://juejin.cn/post/6979042510400126983">产品经理：鸿蒙那个开场动画挺帅的 给咱们页面也整一个呗</a></h2>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2893570337421646">手撕红黑树</a></li>
+<li>赞： 800+</li>
+<li>推荐指数： ★ ★ ★ ★</li>
+<li>推荐理由：以鸿蒙开机动画为切入点，用多种方式实现了其开机动画。爱国情怀真的是好啊。  </li>
+</ul>
+<h2 id="css_1"><a href="https://juejin.cn/post/6979391400844460068">CSS 奇思妙想 | 全兼容的毛玻璃效果</a></h2>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2330620350437678">chokcoco</a></li>
+<li>赞： 400+</li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由： 全兼容的毛玻璃效果，都全兼容了，那你还不拿着直接用？ </li>
+<li>核心实现：<code>backdrop-filter</code> =&gt; <code>background-attachment: fixed</code> + <code>filter: blur()</code> =&gt; <code>moz-element()</code> + <code>filter: blur()</code> =&gt; <code>background</code></li>
+</ul>
+<h2 id="2k-star-50-450"><a href="https://juejin.cn/post/6978856784752541710">2K Star！超过 50 个专题、450 个好项目，大半年来推荐过的重磅项目合集</a></h2>
+<ul>
+<li>作者：<a href="https://juejin.cn/user/1679709496157048">天明夜尽</a>    </li>
+<li>赞： 200+   </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：覆盖React源码，JavaScript, TypeScript, Flutter，小程序，监控等等工具或者项目合集，有空没空看一看，也许会有意外的收获。</li>
+</ul>
+<h2 id="vite"><a href="https://juejin.cn/post/6979716166545571871">Vite 特性和部分源码解析</a></h2>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/3456520257288974">政采云前端团队</a>   </li>
+<li>赞：50+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：从整体流程上分析了一些Vite的编译流程。 整体还是偏浅，期待深度篇。</li>
+</ul>
+<h2 id="-vue313api"><a href="https://juejin.cn/post/6979394726927532068">源码浅析-Vue3中的13个全局Api</a></h2>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/3843548384069741">Tz</a></li>
+<li>赞： 100+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：Vue3中的13个全局Api，并附详细的源码解析。</li>
+</ul>
+<h2 id="-react"><a href="https://juejin.cn/post/6978654109893132318">手写系列-实现一个铂金段位的 React</a></h2>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/4300945218607197">清汤饺子</a></li>
+<li>赞： 100+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：虽然号称铂金段位，其真实实力应该属于黄金段位。其一步一步的实现了极其简易的React的重要部分，值得一读。</li>
+</ul>
+<h2 id="402021"><a href="https://juejin.cn/post/6979931641816825887">一个40岁老程序员的前端学习之路｜2021 年中总结</a></h2>
+<ul>
+<li>作者：  <a href="https://juejin.cn/user/342703355995112">俺老刘</a>  </li>
+<li>赞： 100+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：倒出大龄程序员的心声。40岁，很多程序员成为了管理，很多程序员成为了专家，很多程序员转行了，还有很多程序员还战斗在一线，年轻人的时代，我们应该怎么面对和生存。</li>
+</ul>
+<h2 id="vscode-6"><a href="https://juejin.cn/post/6978796685229031438">使用 vscode 省时的6个插件</a></h2>
+<ul>
+<li>作者：  <a href="https://juejin.cn/user/1996368846261294">Jimmy</a>  </li>
+<li>赞： 100+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：工欲善其事,必先利其器，提高效率的6个工具。 6个，还不够。</li>
+</ul>
+<h2 id="_3"><a href="https://juejin.cn/post/6978638929960370207">「微信小程序」生成水印原理与插件编写</a></h2>
+<ul>
+<li>作者：  <a href="https://juejin.cn/user/2418581313687390">我不是外星人</a>  </li>
+<li>赞： 100+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：比较新颖，简单实用。</li>
+<li>核心实现：先用canvas生成单图，然后利用背景<code>background-repeat:repeat</code>平铺即可。</li>
+</ul>
+<h2 id="30-es6"><a href="https://juejin.cn/post/6979037045440151583">三天三夜，整理了30张高清思维导图 | 带你重温ES6（下）</a></h2>
+<ul>
+<li>作者：  <a href="https://juejin.cn/user/3957856403462989">LBJ</a>  </li>
+<li>赞： 100+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：以图的形式展开ES6的特性，一览全局，省时省力。</li>
+</ul>
+<h2 id="3canvas"><a href="https://juejin.cn/post/6978333352931622949">3千字长文canvas实现任意正多边形的移动（点、线、面）</a></h2>
+<ul>
+<li>作者：  <a href="https://juejin.cn/user/2805609406402798">Fly</a>  </li>
+<li>赞： 50+  </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：徒手画图。 点与点之间的距离，点与直线的关系，向量的旋转你清楚几个？ 本文一一道来。</li>
+</ul>
+<h2 id="functionprototypecall"><a href="https://juejin.cn/post/6978744007601946654">三千文字，也没写好 Function.prototype.call</a></h2>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/131597122679661">云的世界</a></li>
+<li>赞： 200+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：一个<code>call</code>延伸了10多个知识点，看完都不敢说自己能会写<code>call</code>了。 读完此文，对面试官的手写<code>call</code>，你就可以先加上几个问题，基于哪个ES版本，考不考虑node环境，考不考虑严格模式，<code>eval</code> 能不能用。</li>
+</ul>
+<h2 id="-"><a href="https://juejin.cn/post/6979789642090414111">觉醒吧，异步单例模式 - 不一样的单例模式</a></h2>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/131597122679661">云的世界</a></li>
+<li>赞： 50+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：不一样的单例模式，异步单例模式，一步一步的完善，浅入深出，有一定新颖性，提供了一种编程思路。</li>
+</ul><h1>我的掘金前端周刊 第一周</h1><h2 id="_1">前言</h2>
+<p>掘金是一个优秀的社区，每天都会产出非常多的优秀文章。 <br />
+首页推荐的内容涉及太多领域，<strong>若水三千，我只取一勺</strong>， 收集一周之内，优秀的前端文章，以便自己和有类似需求的同志，能更高效的学习和成长。</p>
+<p>如有遗漏，敬请谅解。</p>
+<h2 id="15"><a href="https://juejin.cn/post/6976157870014332935">15 张前端高清知识地图，强烈建议收藏</a></h2>
+<p>一图胜千文，涵盖前端多个知识系统。</p>
+<h2 id="70"><a href="https://juejin.cn/post/6976810016930005029">我优化了进度条，页面性能竟提高了70%</a></h2>
+<p>核心知识点： 重绘重排，性能分析 <br />
+  核心实现： css3动画 + gpu加速</p>
+<h2 id="javascript"><a href="https://juejin.cn/post/6976028030770610213">JavaScript 中如何实现并发控制？</a></h2>
+<p>宝哥出品，必是精品。 <br />
+核心实现：维护一个请求池。</p>
+<h2 id="cli-"><a href="https://juejin.cn/post/6977567286013984776">你还在重复的搬砖！？写个 cli 工具解放你的双手吧 - 动态生成代码模板</a></h2>
+<p>编程就是一个解决问题的过程。编写生成代码的代码。 来吧，兄弟。</p>
+<h2 id="vue2-vue3"><a href="https://juejin.cn/post/6977259197566517284">阿里妈妈又做了新工具，帮你把 Vue2 代码改成 Vue3 的</a></h2>
+<p>让你愉快的升级vue3，那还等什么呢</p>
+<h2 id="vue-vue1x"><a href="https://juejin.cn/post/6977152988678733855">手写 Vue 系列 之 Vue1.x</a></h2>
+<p>vue3虽然已经到来，但是之前版本的精髓你依然值得拥有。</p>
+<h2 id="vue3"><a href="https://juejin.cn/post/6977004323742220319">整理的一些Vue3知识点</a></h2>
+<p>初学者和复习vue的知识的手册。</p>
+<h2 id="react-hooks"><a href="https://juejin.cn/post/6976414994107727909">React，优雅的捕获异常进阶篇， 含Hooks方案</a></h2>
+<p>介绍了捕获异常的常见手段，以及React中如何捕获。  <br />
+核心实现：Object.defineProperty + 装饰器    </p>
+<h2 id="webpack-loader-plugin"><a href="https://juejin.cn/post/6976052326947618853">Webpack - 手把手教你写一个 loader / plugin</a></h2>
+<p>提供了一套开发准则， just do it.</p>
+<h2 id="css"><a href="https://juejin.cn/post/6975818153376874503">纯 CSS 创建五彩斑斓的智慧阴影！让前景图片自动转化为对应彩色的背景阴影</a></h2>
+<p>优秀的翻译之文。 一步一步教你实现漂亮的阴影效果。 <br />
+核心实现： CSS的filter和animation</p>
+<h2 id="css-marker"><a href="https://juejin.cn/post/6973849126609879047">CSS ::marker 让文字序号更有意思</a></h2>
+<p>让文字序号变得有灵性。</p>
+<h2 id="flutter-ui"><a href="https://juejin.cn/post/6975886005144387621">从 Flutter 和前端角度出发，聊聊单线程模型下如何保证 UI 流畅性</a></h2>
+<p>先从前端角度出发，分析 event loop 和事件队列模型。再从 Flutter 层出发聊聊 dart 侧的事件队列和同步异步任务之间的关系。</p>
+<h2 id="typescript"><a href="https://juejin.cn/post/6970841540776329224">总结TypeScript在项目开发中的应用实践体会</a></h2>
+<p>理论加实战，赶紧把TS应用到项目中去吧。</p>
+<h2 id="_2"><a href="https://juejin.cn/post/6976997881605521445">从微服务到微前端：浅谈微前端的设计思想</a></h2>
+<p>里面的微前端的思想，值得去学习。</p>
+<h2 id="web"><a href="https://juejin.cn/post/6976792239393472520">Web 动画原则及技巧浅析</a></h2>
+<p>web动画原来这么多原则，我也终于可以专业的和动效设计师沟通了。</p>
+<h2 id="svg"><a href="https://juejin.cn/post/6976876179496124430">SVG基础及其动画应用浅析</a></h2>
+<p>不失真的SVG动画，值得你去研究和应用。</p>
+</body>
+</html>
