@@ -17,7 +17,6 @@ headers = {
     'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8'
 }
 
-
 def getColumn(cid):
     res = requests.get(URL.get("column") + "?column_id=" +
                        cid, headers=headers)
@@ -28,7 +27,7 @@ def getArticleList(cid):
     data = {
         "column_id": cid,
         "cursor": "0",
-        "limit": 10,
+        "limit": 1000,
         "sort": 0
     }
     res = requests.post(URL.get("articles"),
@@ -69,17 +68,18 @@ def saveArticleContent(cid, aid, content):
 def downloadColumn(cid):
 
     column = getColumn(cid);
+    print("获取专栏信息成功，专栏名称：", column["data"]["column_version"]["title"]);
     saveColumn(cid, json.dumps(column["data"]))
 
     articleList = getArticleList(cid)
     saveArticleList(cid, json.dumps(articleList["data"]))
 
     articleIds = list(map(lambda item: item["article_id"], articleList["data"]))
-    print("articleIds", articleIds)
+    print("获取专栏文章列表成功：", articleIds)
 
     for artId in articleIds:
         artContent = getArticleContent(artId)
         saveArticleContent(cid, artId, json.dumps(artContent["data"]))
-        print("%s completed" % artId)
+        print("文章ID为 %s 的文章下载完毕" % artId)
 
 
