@@ -1,0 +1,261 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专栏</title>
+    <style>
+        pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.codehilite .hll { background-color: #ffffcc }
+.codehilite { background: #f8f8f8; }
+.codehilite .c { color: #408080; font-style: italic } /* Comment */
+.codehilite .err { border: 1px solid #FF0000 } /* Error */
+.codehilite .k { color: #008000; font-weight: bold } /* Keyword */
+.codehilite .o { color: #666666 } /* Operator */
+.codehilite .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.codehilite .cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.codehilite .cp { color: #BC7A00 } /* Comment.Preproc */
+.codehilite .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.codehilite .c1 { color: #408080; font-style: italic } /* Comment.Single */
+.codehilite .cs { color: #408080; font-style: italic } /* Comment.Special */
+.codehilite .gd { color: #A00000 } /* Generic.Deleted */
+.codehilite .ge { font-style: italic } /* Generic.Emph */
+.codehilite .gr { color: #FF0000 } /* Generic.Error */
+.codehilite .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.codehilite .gi { color: #00A000 } /* Generic.Inserted */
+.codehilite .go { color: #888888 } /* Generic.Output */
+.codehilite .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.codehilite .gs { font-weight: bold } /* Generic.Strong */
+.codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.codehilite .gt { color: #0044DD } /* Generic.Traceback */
+.codehilite .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.codehilite .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.codehilite .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.codehilite .kp { color: #008000 } /* Keyword.Pseudo */
+.codehilite .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.codehilite .kt { color: #B00040 } /* Keyword.Type */
+.codehilite .m { color: #666666 } /* Literal.Number */
+.codehilite .s { color: #BA2121 } /* Literal.String */
+.codehilite .na { color: #7D9029 } /* Name.Attribute */
+.codehilite .nb { color: #008000 } /* Name.Builtin */
+.codehilite .nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.codehilite .no { color: #880000 } /* Name.Constant */
+.codehilite .nd { color: #AA22FF } /* Name.Decorator */
+.codehilite .ni { color: #999999; font-weight: bold } /* Name.Entity */
+.codehilite .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.codehilite .nf { color: #0000FF } /* Name.Function */
+.codehilite .nl { color: #A0A000 } /* Name.Label */
+.codehilite .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.codehilite .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.codehilite .nv { color: #19177C } /* Name.Variable */
+.codehilite .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.codehilite .w { color: #bbbbbb } /* Text.Whitespace */
+.codehilite .mb { color: #666666 } /* Literal.Number.Bin */
+.codehilite .mf { color: #666666 } /* Literal.Number.Float */
+.codehilite .mh { color: #666666 } /* Literal.Number.Hex */
+.codehilite .mi { color: #666666 } /* Literal.Number.Integer */
+.codehilite .mo { color: #666666 } /* Literal.Number.Oct */
+.codehilite .sa { color: #BA2121 } /* Literal.String.Affix */
+.codehilite .sb { color: #BA2121 } /* Literal.String.Backtick */
+.codehilite .sc { color: #BA2121 } /* Literal.String.Char */
+.codehilite .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.codehilite .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.codehilite .s2 { color: #BA2121 } /* Literal.String.Double */
+.codehilite .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.codehilite .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.codehilite .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.codehilite .sx { color: #008000 } /* Literal.String.Other */
+.codehilite .sr { color: #BB6688 } /* Literal.String.Regex */
+.codehilite .s1 { color: #BA2121 } /* Literal.String.Single */
+.codehilite .ss { color: #19177C } /* Literal.String.Symbol */
+.codehilite .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.codehilite .fm { color: #0000FF } /* Name.Function.Magic */
+.codehilite .vc { color: #19177C } /* Name.Variable.Class */
+.codehilite .vg { color: #19177C } /* Name.Variable.Global */
+.codehilite .vi { color: #19177C } /* Name.Variable.Instance */
+.codehilite .vm { color: #19177C } /* Name.Variable.Magic */
+.codehilite .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+* {
+    font-size: 30px;
+}
+
+img{
+    display: block;
+    min-width: 50%;
+}  
+    </style>
+</head>
+<body>
+<h1>我的掘金前端周刊 第六周 7月26日-8月1日 ｜ 8月更文挑战</h1><p>前言</p>
+<p>收集一周之内，优秀的前端文章，以便自己和有类似需求的同志，能更高效的学习和成长。如有遗漏，敬请谅解</p>
+<p>本文下面的题材默认不会收集：  <strong>1. 面试</strong> <strong>2. 算法</strong>  </p>
+<p>往期可查看专栏 <a href="https://juejin.cn/column/6977915766267969549">我的掘金前端周栏</a>, 欢迎关注，更期望你的点赞。 </p>
+<p><strong>往期推荐</strong> <br />
+<a href="https://juejin.cn/post/6989044564262649864">我的掘金前端周刊 第五周 7月19日-7月25日</a>  <br />
+<a href="https://juejin.cn/post/6986433541319950373">我的掘金前端周刊 第四周 7月12日-7月18日</a> <br />
+<a href="https://juejin.cn/post/6983841126272729124">我的掘金前端周刊 第三周 7月5日-7月11日</a>   </p>
+<h2 id="_1">本周看点</h2>
+<h3 id="2021"><a href="https://juejin.cn/post/6989422484722286600">2021年我的前端面试准备</a></h3>
+<p>2万多访问量，1000+ star。<br />
+作者<a href="https://juejin.cn/user/1908407918660359">伊人a</a>, 目前为止一共两篇文章，上一篇就是年中总得获得大奖的<a href="https://juejin.cn/post/6976871777284653069"># 两年前端程序媛从0到18k的逆袭之路 | 2021年中总结</a>。<br />
+可算是篇篇精品，可算是掘金女人珍贵，可算是面试必火。</p>
+<h3 id="_2"><a href="https://juejin.cn/user/4098610193243789">小浪努力学前端</a></h3>
+<p>这是一个掘友的名字，其<strong>职位</strong>是学生。  <br />
+其一共发了四篇文章，篇篇200+ star。 <br />
+* <a href="https://juejin.cn/post/6990582632270528525">从了解到深入虚拟DOM和实现diff算法</a> 300+
+* <a href="https://juejin.cn/post/6989106100582744072">手写一个简易vue响应式带你了解响应式原理</a> 400+
+* <a href="https://juejin.cn/post/6988316779818778631">从使用到自己实现简单Vue Router看这个就行了</a>  300+
+* <a href="https://juejin.cn/post/6983934602196811789">前端面试必不可少的基础知识，虽然少但是你不能不知道</a>  300+</p>
+<p>后生可畏啊！</p>
+<h2 id="_3">五星推荐</h2>
+<h3 id="720"><a href="https://juejin.cn/post/6989439618877751303">我给鸿星尔克写了一个720°看鞋展厅</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/923245497557111">程序员秋风</a></li>
+<li>赞： 900+</li>
+<li>推荐指数： ★ ★ ★ ★ ★ </li>
+<li>推荐理由：趁着热度，搞个3D看鞋展厅，搞得我都想学threejs啦。核心就是建模，文有提到方案方式和相关的工具。</li>
+</ul>
+<h2 id="_4">四星推荐</h2>
+<h3 id="compose"><a href="https://juejin.cn/post/6989020415444123662">感谢 compose 函数，让我的代码屎山💩逐渐美丽了起来~</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/1521379823340792">掘金安东尼</a></li>
+<li>赞： 600+</li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由：compose函数组合，在redux和express, <a href="https://github.com/30-seconds/30-seconds-of-code">30-seconds-of-code</a>等库中都有类似额实现，个人认为，目前最简单的实现当属于使用数组的Reduce。此文从实际场景触发，从普通函数compose到composePromise, 务实有趣，值得我们一起学习。</li>
+</ul>
+<h3 id="vue"><a href="https://juejin.cn/post/6989106100582744072">手写一个简易vue响应式带你了解响应式原理</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/4098610193243789">小浪努力学前端</a></li>
+<li>赞： 400+</li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由：代理，发布订阅，观察者这几位是Vue实现的几个核心，本文是职位为学生的一位掘友写的，其每篇文章都很有质量，推荐大家一并阅读。</li>
+</ul>
+<h3 id="9"><a href="https://juejin.cn/post/6989413354628448264">文件下载，搞懂这9种场景就够了</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/764915822103079">阿宝哥</a></li>
+<li>赞： 500+</li>
+<li>推荐指数： ★ ★ ★ ★ </li>
+<li>推荐理由：前有<a href="https://juejin.cn/post/6980142557066067982"> 文件上传，搞懂这8种场景就够了</a>, 现在<a href="https://juejin.cn/post/6989413354628448264">文件下载，搞懂这9种场景就够了</a>，上传下载都包了，拿着用吧。</li>
+</ul>
+<h2 id="_5">三星推荐</h2>
+<h3 id="pv-"><a href="https://juejin.cn/post/6989751020255445005">百万PV商城实践系列 - 前端图片资源优化实战</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/4248168660735310">wangly19</a></li>
+<li>赞： 400+ </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：图片的优化一直是前端的重点工作之一，文章涉及普通图片优化，高保真图片优化，长渲染图优化，一切看起来都那么的简单合理。 另外还送了毛边或者缝隙的解决方案，这个我有碰到过，真希望能帮助到大家。</li>
+</ul>
+<h3 id="domdiff"><a href="https://juejin.cn/post/6990582632270528525">从了解到深入虚拟DOM和实现diff算法</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/4098610193243789">小浪努力学前端</a></li>
+<li>赞： 300+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：<a href="https://juejin.cn/user/4098610193243789">小浪努力学前端</a>已经有一篇在四星推荐。 本文图文并茂，看起来都不深，学起来都不难那种， 再了解一波吧。</li>
+</ul>
+<h3 id="canvas73"><a href="https://juejin.cn/post/6989003710030413838">为了让你们进阶Canvas，我花7小时写了3个有趣的小游戏！！！</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/1292681407377624">Sunshine_Lin</a></li>
+<li>赞： 200+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：贪吃蛇，星星连线，五子棋三个游戏，不借助三方库，潇潇洒洒的不足百行代码足以。</li>
+</ul>
+<h3 id="button"><a href="https://juejin.cn/post/6990511054224621598"> 前端组件化实战之 Button</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/325111174662855">洛竹</a></li>
+<li>赞：200+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：一个简单的按钮组件，涉及到类型，形状，加载，颜色，边框等等，就那么简单，又不那么简单，学着点。 大神和普通人之间的差距，除了宏观还有细节，细节可以学，宏观吗，看缘分。</li>
+</ul>
+<h3 id="aaabase64"><a href="https://juejin.cn/post/6989391487200919566">【AAA货】前端Base64编码知识，一文打尽，探索起源，追求真相</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/131597122679661">云的世界</a></li>
+<li>赞： 100+ </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：Base64在前端应用其实很广泛，截图，jwt，头像剪裁，混淆加密，soureMap等等，探求起源，理解原理以及相关的编码知识。</li>
+</ul>
+<h3 id="3d"><a href="https://juejin.cn/post/6988949401842483230">产品经理：你能不能在网页里实现裸眼3D</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2955079655898093">大帅老猿</a></li>
+<li>赞： 200+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：从三个造个框框，再打破它，人脸识别，陀螺仪三个方案讨论裸眼3D，不觉明历。</li>
+</ul>
+<h3 id="_6"><a href="https://juejin.cn/post/6990000320822657031">这可能是目前最好用的开源可视化拖拽框架</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/360295547021822">这可能是目前最好用的开源可视化拖拽框架</a></li>
+<li>赞：  200+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：这篇文章文字应该不到500，为啥还要推荐呢。我只是想告诉你，这里有一套免费开源的可视化框架，你还可以去参与贡献啊，机会啊，兄弟。</li>
+</ul>
+<h3 id="-react-cli"><a href="https://juejin.cn/post/6989028324202938398">前端工程化实战 - 自定义 React 脚手架 &amp; CLI 升级</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2717648473821736">CookieBoty</a></li>
+<li>赞：  100+</li>
+<li>推荐指数： ★ ★ ★</li>
+<li>推荐理由：此文中规中矩，并无太多亮点，其中简化 server 信息输出，倒是有些实际用途。不过其思路清晰，阅读感还不错哦。</li>
+</ul>
+<h3 id="vue3-pk-react17"><a href="https://juejin.cn/post/6990028188080406558">Vue3 源码解毒 &amp; PK React17</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2084329775958248">是渣男吧</a></li>
+<li>赞：  100+ </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：文中vue时间切片，与hooks对比部分比较精彩，推荐大家阅读。</li>
+</ul>
+<h3 id="css-content"><a href="https://juejin.cn/post/6989017411261300750?">CSS 进阶之熟悉又陌生的 content</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/team/6932676282429898766">微医前端团队</a></li>
+<li>赞： 100+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：本人自己也想一篇的，文章涉及替换元素和content的各种使用场景，特别强调一些content真的用途很广。</li>
+</ul>
+<h3 id="css"><a href="https://juejin.cn/post/6989513390636924936"> 每个前端都需要知道这些面向未来的CSS技术</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/4125023357377447">李振文</a></li>
+<li>赞： 100+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：介绍了自定义滚动条，css自定义属性，css新的伪类，JS in CSS, CSS Grid等等，非常不错。 作为一些中高级前端肯定都知道，有时候为什么不适用，主要还是兼容性和功能局限性问题。</li>
+</ul>
+<h3 id="javascript"><a href="https://juejin.cn/post/6989436364693454855">一位初级进阶中级 JavaScript 工作者的自我修养（一）</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/958429872534056">gyx_这个杀手不太冷静</a></li>
+<li>赞：  100+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：变量和类型，原型和原型链，作用域和闭包三部分做了很多细节上的讲解。 我想额外多的是掘金的菜单能加一个收起和产开的功能吗？</li>
+</ul>
+<h3 id="_7"><a href="https://juejin.cn/post/6989033473457520653">一个优秀前端的工具素养</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/1935567327597559"> 专有钉钉前端团队</a></li>
+<li>赞： 100+ </li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：磨刀不误砍柴功，利用好工具，事半功倍。 VSCode, 终端，DebugTools，搜索等等，拿来吧你。</li>
+</ul>
+<h3 id="1w"><a href="https://juejin.cn/post/6988901231674523661">1w条数据，平铺数组转树形结构</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/835284566550552">MikiMiki</a></li>
+<li>赞：  100+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：这种场景，相比很多同学碰到过，递归还是非递归，本文可以给你思路和答案。 兄弟你倒是贴代码，不要贴图啊。</li>
+</ul>
+<h3 id="_8"><a href="https://juejin.cn/post/6990224267447271455">前端工程师视角：稿定科技是一家怎样的公司</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/3650034333385399">糖饼</a></li>
+<li>赞：  200+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由： 这其实是一篇招聘文章，但是又让你看不出那么明显的招聘信息。我们学着点。</li>
+</ul>
+<h3 id="webworker-indexeddb"><a href="https://juejin.cn/post/6990596611189506062">（虚拟列表 + webWorker + indexedDB）处理十万条数据</a></h3>
+<ul>
+<li>作者： <a href="https://juejin.cn/user/2365804755290424">爱喝葡萄汁的海豹</a></li>
+<li>赞： 50+</li>
+<li>推荐指数： ★ ★ ★ </li>
+<li>推荐理由：<a href="https://juejin.cn/post/6986237263164211207">后端一次给你10万条数据,如何优雅展示，面试官到底考察我什么?</a>, 这篇文章，想必大家都见过，答案显示是的错的， 而推荐的这篇，让大家了解一些正确的姿势。</li>
+</ul>
+</body>
+</html>
