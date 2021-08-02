@@ -35,11 +35,13 @@
 
 1. 下载 [wkhtmltopdf](https://wkhtmltopdf.org/), 并配置环境变量
 2. 下载本地项目，进入项目文件
-3. 修改`main.py`文件的`CID`值
-```js
-C_ID = '6979380367216082957'
+3. 执行命令 
+acid: 专栏ID或者文章ID
+type: 默认为专栏`c`，如果是文章请输入`a`
+```python   
+python main.py [acid] [type]
+
 ```
-4. 执行命令 `python main.py`
 
 
 
